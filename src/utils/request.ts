@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  // baseURL: 'http://192.168.100.202:8002/biz/platform/api/v1/',
-  baseURL: '/api',
+  baseURL: import.meta.env.MODE === "production" ? 'http://izone.sichuanair.com/platform/rest' : '/api',
+  // baseURL: '/api',
   // timeout: 1000,
 });
 

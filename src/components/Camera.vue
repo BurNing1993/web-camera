@@ -40,12 +40,15 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
-import { webCamera } from "../utils/camera";
+import { getCamera } from "../utils/camera";
+import { translateBase64ImgToFile } from "../utils";
+import { searchFaceByFile } from "../api/face";
 
 export default defineComponent({
   name: "Camera",
   props: {},
   setup: () => {
+    const camera = getCamera();
     const video = ref<HTMLVideoElement | null>(null);
     const canvas = ref<HTMLCanvasElement | null>(null);
     const img = ref<HTMLImageElement | null>(null);
@@ -55,7 +58,7 @@ export default defineComponent({
     );
     const disabled = ref(false);
     onMounted(() => {
-      webCamera(video.value!);
+      camera(video.value!);
       ctx = canvas.value!.getContext("2d");
     });
     const onClick = async () => {
@@ -67,10 +70,17 @@ export default defineComponent({
         canvas.value!.height = height;
         console.log(width, height);
         ctx?.drawImage(video.value!, 0, 0, width, height);
-        const src = canvas.value?.toDataURL();
-        imgSrc.value = src || "";
-        // if (src) {
-        //   const res = await searchFace(src);
+        const base64 = canvas.value?.toDataURL();
+        imgSrc.value = base64 || "";
+        if (base64) {
+          const imgFile = translateBase64ImgToFile(base64);
+          const data = new FormData();
+          data.append("file", imgFile);
+          const res =await searchFaceByFile(data)
+          console.log(res);
+        }
+        // if (base64) {
+        //   const res = await searchFace(base64);
         //   console.log(res);
         // }
       } catch (error) {
@@ -81,7 +91,7 @@ export default defineComponent({
     };
 
     const switchCamera = () => {
-      webCamera(video.value!, true);
+      camera(video.value!, true);
     };
     return {
       video,

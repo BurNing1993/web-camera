@@ -7,7 +7,8 @@ export default defineConfig({
   server:{
     proxy:{
       '/api': {
-        target: 'http://192.168.100.202:8002/biz/platform/api/v1/',
+        // target: 'http://192.168.100.202:8002/biz/platform/api/v1/rest/',
+        target: 'http://izone.sichuanair.com/platform/rest',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }

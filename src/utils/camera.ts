@@ -3,7 +3,16 @@ import githubVideo from '../assets/github.mp4'
 type CAMERA_TYPE = 'user' | 'environment'
 const FACING_MODE = 'facingMode';
 
-export function h5Camera() { }
+
+
+export function h5Camera() {
+  document.addEventListener("plusready", onPlusReady, false);
+  function onPlusReady() {
+    //@ts-ignore
+    var cmr = plus.camera.getCamera();
+    console.log("Camera supperted image resolutions: " + cmr.supportedImageResolutions);
+  }
+}
 
 
 export function webCamera(video: HTMLVideoElement, switchCamera = false) {
@@ -37,4 +46,13 @@ export function webCamera(video: HTMLVideoElement, switchCamera = false) {
       video.play();
       console.error(err);
     });
+}
+
+
+export function getCamera() {
+  //@ts-ignore
+  if (import.meta.env.VITE_PLATFORM === 'APP' && plus.runtime.appid) {
+    return h5Camera;
+  }
+  return webCamera;
 }
