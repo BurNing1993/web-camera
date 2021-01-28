@@ -1,19 +1,27 @@
 <template>
-  <div class="font-sans ">
+  <div class="font-sans">
     <Camera />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Camera from './components/Camera.vue'
+import { defineComponent, onMounted } from "vue";
+import Camera from "./components/Camera.vue";
+import vconsole from "vconsole";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    Camera
-  }
-})
+    Camera,
+  },
+  setup() {
+    onMounted(() => {
+      if (import.meta.env.MODE === "production") {
+        new vconsole();
+      }
+    });
+  },
+});
 </script>
 
 <style></style>

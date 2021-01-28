@@ -519,6 +519,13 @@ autoprefixer@^10.2.3:
     normalize-range "^0.1.2"
     postcss-value-parser "^4.1.0"
 
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.1.tgz?cache=0&sync_timestamp=1608609188013&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Faxios%2Fdownload%2Faxios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
+  dependencies:
+    follow-redirects "^1.10.0"
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/balanced-match/download/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
@@ -786,6 +793,11 @@ fill-range@^7.0.1:
   integrity sha1-GRmmp8df44ssfHflGYU12prN2kA=
   dependencies:
     to-regex-range "^5.0.1"
+
+follow-redirects@^1.10.0:
+  version "1.13.2"
+  resolved "https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.13.2.tgz?cache=0&sync_timestamp=1611607023541&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffollow-redirects%2Fdownload%2Ffollow-redirects-1.13.2.tgz#dd73c8effc12728ba5cf4259d760ea5fb83e3147"
+  integrity sha1-3XPI7/wScoulz0JZ12DqX7g+MUc=
 
 fraction.js@^4.0.13:
   version "4.0.13"
@@ -1086,6 +1098,11 @@ ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npm.taobao.org/ms/download/ms-2.1.2.tgz?cache=0&sync_timestamp=1607433872491&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fms%2Fdownload%2Fms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
+
+mutation-observer@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/mutation-observer/download/mutation-observer-1.0.3.tgz#42e9222b101bca82e5ba9d5a7acf4a14c0f263d0"
+  integrity sha1-QukiKxAbyoLlup1aes9KFMDyY9A=
 
 mz@^2.4.0:
   version "2.7.0"
@@ -1473,6 +1490,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+transitionEnd@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npm.taobao.org/transitionEnd/download/transitionEnd-1.0.2.tgz#1914db5b45a7efdc34a01af69285a3a693871633"
+  integrity sha1-GRTbW0Wn79w0oBr2koWjppOHFjM=
+
 tslib@^1.9.3:
   version "1.14.1"
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1609887446826&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
@@ -1507,6 +1529,14 @@ uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.npm.taobao.org/uuid/download/uuid-8.3.2.tgz?cache=0&sync_timestamp=1607458532020&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fuuid%2Fdownload%2Fuuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha1-gNW1ztJxu5r2xEXyGhoExgbO++I=
+
+vconsole@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.npm.taobao.org/vconsole/download/vconsole-3.4.0.tgz?cache=0&sync_timestamp=1610614380057&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvconsole%2Fdownload%2Fvconsole-3.4.0.tgz#2cf2ffaa86cd7ab736997a22b63d05627c6ab567"
+  integrity sha1-LPL/qobNerc2mXoitj0FYnxqtWc=
+  dependencies:
+    mutation-observer "^1.0.3"
+    transitionEnd "^1.0.2"
 
 vite@^2.0.0-beta.50:
   version "2.0.0-beta.51"
