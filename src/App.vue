@@ -1,6 +1,6 @@
 <template>
   <div class="font-sans">
-    <Camera />
+    <router-view></router-view>
   </div>
 </template>
 

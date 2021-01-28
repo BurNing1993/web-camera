@@ -6,6 +6,7 @@
       class="absolute top-0 left-0 w-full cover max-h-screen"
       autoplay
       loop
+      src='../assets/github.mp4'
     ></video>
     <button
       class="fixed left-1/2 bottom-0 transform -translate-x-1/2 rounded-full w-20 h-20 opacity-70 bg-black focus:outline-none"
@@ -41,8 +42,8 @@
 <script lang="ts">
 import { defineComponent, onMounted, ref } from "vue";
 import { getCamera } from "../utils/camera";
-import { translateBase64ImgToFile } from "../utils";
-import { searchFaceByFile } from "../api/face";
+// import { translateBase64ImgToFile } from "../utils";
+import { searchFace } from "../api/face";
 
 export default defineComponent({
   name: "Camera",
@@ -72,17 +73,17 @@ export default defineComponent({
         ctx?.drawImage(video.value!, 0, 0, width, height);
         const base64 = canvas.value?.toDataURL();
         imgSrc.value = base64 || "";
-        if (base64) {
-          const imgFile = translateBase64ImgToFile(base64);
-          const data = new FormData();
-          data.append("file", imgFile);
-          const res =await searchFaceByFile(data)
-          console.log(res);
-        }
         // if (base64) {
-        //   const res = await searchFace(base64);
+        //   const imgFile = translateBase64ImgToFile(base64);
+        //   const data = new FormData();
+        //   data.append("file", imgFile);
+        //   const res =await searchFaceByFile(data)
         //   console.log(res);
         // }
+        if (base64) {
+          const res = await searchFace(base64);
+          console.log(res);
+        }
       } catch (error) {
         console.error(error);
       } finally {

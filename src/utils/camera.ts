@@ -1,5 +1,3 @@
-import githubVideo from '../assets/github.mp4'
-
 type CAMERA_TYPE = 'user' | 'environment'
 const FACING_MODE = 'facingMode';
 
@@ -42,8 +40,6 @@ export function webCamera(video: HTMLVideoElement, switchCamera = false) {
       };
     })
     .catch(function (err) {
-      video.src = githubVideo;
-      video.play();
       console.error(err);
     });
 }
